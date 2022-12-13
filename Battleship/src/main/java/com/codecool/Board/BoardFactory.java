@@ -1,4 +1,4 @@
-package org.example.Board;
+package com.codecool.Board;
 
 public class BoardFactory {
 }
