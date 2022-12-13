@@ -3,7 +3,6 @@ package com.codecool.Board;
 import com.codecool.Ship.Square;
 
 public class Board {
-
     private final int boardSize = 10;
     private Square[][] ocean;
 
@@ -16,8 +15,13 @@ public class Board {
         }
     }
 
+    public boolean isPlacementOk(){
+        return true;
+    }
+
     public String toString() {
-        String boardAsString = "";
+        String blueString = "\u001B[34m";
+        String boardAsString = "" + blueString;
         for (int i = 0; i < boardSize; i++) {
             boardAsString += String.format("%" + 3 + "d", i + 1);
         }
@@ -26,7 +30,7 @@ public class Board {
             boardAsString += (((char) (i + 65)));
             for (int j = 0; j < boardSize; j++) {
                 if (ocean[i][j] != null) {
-                    boardAsString += " . ";
+                    boardAsString += " ■ ";
                 } else {
                     boardAsString += " " + ocean[i][j] + " ";
                 }
