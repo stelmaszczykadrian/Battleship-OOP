@@ -1,4 +1,4 @@
-package org.example.Ship;
+package com.codecool.Ship;
 
 public class SquareStatus {
 }
