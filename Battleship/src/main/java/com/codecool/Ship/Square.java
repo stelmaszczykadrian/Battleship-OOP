@@ -1,5 +1,6 @@
 package com.codecool.Ship;
 
+
 public class Square {
     private int x;
     private int y;
