@@ -26,7 +26,7 @@ public class Board {
             boardAsString += (((char) (i + 65)));
             for (int j = 0; j < boardSize; j++) {
                 if (ocean[i][j] != null) {
-                    boardAsString += " . ";
+                    boardAsString += ("☁ ");
                 } else {
                     boardAsString += " " + ocean[i][j] + " ";
                 }
@@ -36,3 +36,5 @@ public class Board {
     }
 
 }
+
+    EMPTY("☁ ")
