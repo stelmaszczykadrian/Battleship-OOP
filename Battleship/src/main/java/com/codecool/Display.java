@@ -52,10 +52,23 @@ public class Display {
                         "\t4. Quit.\n"
         );
     }
-    public void WrongIntMessage(){
-        System.out.println("Please enter a number between 1-10!");
+    public void WrongIntMessage(int inputSize){
+        System.out.println("Please enter a number between 1-" + inputSize + "!");
     }
     public void ThatsNotIntMessage(){
         System.out.println("That's not a number!");
+    }
+
+    public void notImplemented() {
+        System.out.println("That is not implemented️yet ⚓");
+    }
+
+    public void goodbye() {
+        System.out.println("Bye!");
+    }
+    public void clearTerminal(){
+        for (int i = 0; i < 60; i++){
+        System.out.println();
+    }
     }
 }
