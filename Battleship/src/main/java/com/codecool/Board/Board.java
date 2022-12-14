@@ -23,6 +23,10 @@ public class Board implements IBoard {
         }
     }
 
+    public int getBoardSize(){
+        return boardSize;
+    }
+
     /***
      * Strzał w inny statek
      * @param x
@@ -31,6 +35,7 @@ public class Board implements IBoard {
      */
     @Override
     public boolean Shoot(Integer x, Integer y) {
+
         return ocean[x][y].getStatus().equals(Square.SquareStatus.SHIP);
     }
 
