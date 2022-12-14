@@ -7,6 +7,7 @@ public class Game {
     private final Input input = new Input();
     private final Board board = new Board();
     private final Display display = new Display();
+    private final Coordinates coordinates = new Coordinates();
     Board boardPlayer = BoardFactory.randomPlacement();
 
     public void startGame(){
@@ -21,18 +22,17 @@ public class Game {
     public void manageMenu(){
         while(true) {
             int menuDecision = input.giveIntInput(4);
-            if (menuDecision == 1) {
+            if (menuDecision == 0) {
                 display.printBoard(board);
                 display.printBoard(boardPlayer);
-                System.out.println(input.giveStringInput());
-                int x = input.giveIntInput(10);
+                coordinates.getCoordinates();
                 break;
-            } else if (menuDecision == 4) {
+            } else if (menuDecision == 3) {
                 display.goodbye();
                 break;
             } else {
-                display.notImplemented();
                 display.clearTerminal();
+                display.notImplemented();
                 display.mainMenu();
             }
         }

@@ -63,6 +63,10 @@ public class Display {
         System.out.println("That is not implemented️yet ⚓");
     }
 
+    public void invalidInput() {
+        System.out.println("Invalid input");
+    }
+
     public void goodbye() {
         System.out.println("Bye!");
     }
@@ -70,5 +74,9 @@ public class Display {
         for (int i = 0; i < 60; i++){
         System.out.println();
     }
+    }
+
+    public void giveYinputMessage() {
+        System.out.println("Please enter a letter between a-j");
     }
 }
