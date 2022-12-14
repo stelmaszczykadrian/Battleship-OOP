@@ -3,7 +3,6 @@ package com.codecool.Board;
 import com.codecool.Exceptions.PlaceExceptions;
 import com.codecool.Ship.Ship;
 import com.codecool.Ship.Square;
-import com.codecool.Ship.SquareStatus;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -19,7 +18,7 @@ public class Board implements IBoard {
         ocean = new Square[boardSize][boardSize];
         for (int i = 0; i < boardSize; i++) {
             for (int j = 0; j < boardSize; j++) {
-                ocean[i][j] = new Square(i,j, SquareStatus.EMPTY);
+                ocean[i][j] = new Square(i,j);
             }
         }
     }
@@ -38,20 +37,17 @@ public class Board implements IBoard {
     @Override
     public Ship PlaceShip(Integer x, Integer y, Direction direction,  Ship.ShipType shipType) throws PlaceExceptions {
         if (!isPlacementOk(x,y,direction,shipType)) throw new PlaceExceptions("");
-//        System.out.println("tworze na:"+(x)+" "+(y));
         List<Square> shipArea = new LinkedList<>();
         int size = shipType.size;
         for(int i=0;i<size;i++) {
             Square tmpSquere;
             if (direction.equals(Direction.HORIZONTAL)) {
-  //              System.out.println(""+(x)+" "+(y+i));
                 if ((y + i) >= this.boardSize) {
                     throw new PlaceExceptions("y"+y);
                 }
                 tmpSquere = ocean[x][y + i];
             }
             else {
-//                System.out.println(""+(x+i)+" "+(y));
                 if ((x + i) >= this.boardSize) throw new PlaceExceptions("x"+x);
                 tmpSquere = ocean[x+i][y];
             }
