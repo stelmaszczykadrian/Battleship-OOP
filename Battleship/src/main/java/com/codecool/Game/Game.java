@@ -24,6 +24,8 @@ public class Game {
             if (menuDecision == 1) {
                 display.printBoard(board);
                 display.printBoard(boardPlayer);
+                System.out.println(input.giveStringInput());
+                int x = input.giveIntInput(10);
                 break;
             } else if (menuDecision == 4) {
                 display.goodbye();
