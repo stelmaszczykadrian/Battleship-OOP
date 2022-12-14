@@ -3,6 +3,8 @@ import com.codecool.Board.Board;
 import com.codecool.Board.BoardFactory;
 import com.codecool.Display;
 
+import java.util.Arrays;
+
 public class Game {
     private final Input input = new Input();
     private final Board board = new Board();
@@ -15,7 +17,7 @@ public class Game {
         display.welcomeShip();
         display.rulesOfGame();
         display.mainMenu();
-        display.printBoard(boardPlayer);
+//        display.printBoard(boardPlayer);
         manageMenu();
 
 
@@ -26,7 +28,12 @@ public class Game {
             if (menuDecision == 0) {
                 display.printBoard(board);
                 display.printBoard(boardPlayer);
-                System.out.println(coordinates.getCoordinates());
+                int y = coordinates.getYCoordinates();
+                int x = coordinates.getXCoordinates();
+
+                boolean isShootSuccessful = boardPlayer.isShootSuccessful(y,x);
+                System.out.println(isShootSuccessful);
+
                 break;
             } else if (menuDecision == 3) {
                 display.goodbye();
