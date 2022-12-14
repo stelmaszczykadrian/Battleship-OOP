@@ -12,18 +12,16 @@ public class Coordinates {
 
 
 
-     public void getCoordinates() {
-         int yCoords;
-         int xCoords;
+     public int[] getCoordinates() {
          while (true) {
              display.giveYinputMessage();
              String userInput = input.giveStringInput();
              if (userInput.length() == 1 && ('a' <= userInput.charAt(0) && userInput.charAt(0) <= 'j')) {
-                 yCoords = giveYCoords(userInput.charAt(0));
-                 xCoords = input.giveIntInput(board.getBoardSize());
+                 int yCoords = giveYCoords(userInput.charAt(0));
+                 int xCoords = input.giveIntInput(board.getBoardSize());
                  System.out.println(xCoords);
                  System.out.println(yCoords);
-                 break;
+                 return new int []{yCoords, xCoords};
              } else {
                  display.invalidInput();
              }
