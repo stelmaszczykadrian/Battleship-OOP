@@ -1,12 +1,16 @@
 package com.codecool.Ship;
 
+import java.util.List;
+
 public class Ship {
 
-    protected final String name;
+    // protected final String name;
     protected final int size;
 
-    protected Ship(String name, int size) {
-        this.name = name;
+    private List<Square> squares;
+
+    protected Ship(List<Square> squares, int size) {
+        this.squares = squares;
         this.size = size;
     }
 private enum shipType {
@@ -21,5 +25,5 @@ private enum shipType {
             this.size = size;
         }
     }
-    }
+}
 
