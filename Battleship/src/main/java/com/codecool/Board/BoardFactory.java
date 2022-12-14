@@ -16,7 +16,6 @@ public class BoardFactory {
                     System.out.println("E:"+x);
                 }
             } while (ship==null );
-            System.out.println("Stworzyłem shipa "+ship);
         }
 
 
@@ -26,8 +25,5 @@ public class BoardFactory {
     public static Board emptyPlacement() {
         return new Board();
     }
-
-
-
 
 }
