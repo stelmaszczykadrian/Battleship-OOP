@@ -52,4 +52,10 @@ public class Display {
                         "\t4. Quit.\n"
         );
     }
+    public void WrongIntMessage(){
+        System.out.println("Please enter a number between 1-10!");
+    }
+    public void ThatsNotIntMessage(){
+        System.out.println("That's not a number!");
+    }
 }
