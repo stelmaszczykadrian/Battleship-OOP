@@ -8,9 +8,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Board implements IBoard {
-
-
-    public enum Direction { HORIZONTAL, VERTICAL }
+    public enum Direction {HORIZONTAL, VERTICAL}
     private final int boardSize = 10;
     private Square[][] ocean;
 
