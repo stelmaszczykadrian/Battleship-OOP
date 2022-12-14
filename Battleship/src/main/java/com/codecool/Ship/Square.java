@@ -1,30 +1,36 @@
 package com.codecool.Ship;
 
 
+
 public class Square {
+
+    public enum SquareStatus {
+        EMPTY, SHIP, HIT, MISSED
+    }
+
+    SquareStatus status;
     private int x;
     private int y;
-    private SquareStatus squareStatus;
 
-    public Square(int x, int y, SquareStatus squareStatus) {
+    public Square(int x, int y) {
         this.x = x;
         this.y = y;
-        this.squareStatus = squareStatus;
+        status = SquareStatus.EMPTY;
+    }
+    public SquareStatus getStatus() {
+        return status;
     }
 
-    public void setSquareStatus(SquareStatus squareStatus) {
-        this.squareStatus = squareStatus;
+    public void setStatus(SquareStatus status) {
+        this.status = status;
     }
 
-    public int getY() {
-        return y;
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public SquareStatus getSquareStatus() {
-        return squareStatus;
+    @Override
+    public String toString() {
+        return "Square{" +
+                "status=" + status +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

@@ -4,16 +4,22 @@ import java.util.List;
 
 public class Ship {
 
-    // protected final String name;
-    protected final int size;
+    List<Square> shipArea;
+    ShipType shipType;
 
-    private List<Square> squares;
-
-    protected Ship(List<Square> squares, int size) {
-        this.squares = squares;
-        this.size = size;
+    public Ship(List<Square> shipArea) {
+        this.shipArea = shipArea;
     }
-private enum shipType {
+
+    public ShipType getShipType() {
+        return shipType;
+    }
+
+    public void setShipType(ShipType shipType) {
+        this.shipType = shipType;
+    }
+
+    public enum ShipType {
         CARRIER(5),
         CRUISER(4),
         BATTLESHIP(3),
@@ -21,9 +27,17 @@ private enum shipType {
         DESTROYER(1);
 
         public final int size;
-        shipType(int size) {
+        ShipType(int size) {
             this.size = size;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Ship{" +
+                "shipArea=" + shipArea +
+                ", shipType=" + shipType +
+                '}';
     }
 }
 
