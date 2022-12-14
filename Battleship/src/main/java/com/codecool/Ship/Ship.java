@@ -1,19 +1,24 @@
 package com.codecool.Ship;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.stream.Stream;
 
 public class Ship {
 
     List<Square> shipArea;
-    ShipType shipType;
+     ShipType shipType;
 
     public Ship(List<Square> shipArea) {
         this.shipArea = shipArea;
     }
 
     public ShipType getShipType() {
+
         return shipType;
     }
+
 
     public void setShipType(ShipType shipType) {
         this.shipType = shipType;
@@ -30,7 +35,23 @@ public class Ship {
         ShipType(int size) {
             this.size = size;
         }
+
+        public static Stream<ShipType> stream() {
+            return Stream.of(ShipType.values());
+        }
+        public static List<ShipType> getAllShipTypes(){
+            List<ShipType> types = new ArrayList<>();
+            types.add(ShipType.DESTROYER);
+            types.add(ShipType.SUBMARINE);
+            types.add(ShipType.BATTLESHIP);
+            types.add(ShipType.CRUISER);
+            types.add(ShipType.CARRIER);
+
+            return types;
+        }
+
     }
+
 
     @Override
     public String toString() {
