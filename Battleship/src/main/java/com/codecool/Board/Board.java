@@ -74,10 +74,6 @@ public class Board implements IBoard {
         );
     }
 
-
-
-
-
     public String toString() {
         String blueString = "\u001B[34m";
         String boardAsString = "" + blueString;
@@ -92,9 +88,9 @@ public class Board implements IBoard {
                     switch (ocean[i][j].getStatus())
                     {
                         case EMPTY: boardAsString += " ■ "; break;
-                        case HIT: boardAsString += " X "; break;
+                        case HIT: boardAsString += " H "; break;
                         case SHIP: boardAsString += " S "; break;
-                        case MISSED: boardAsString += " O "; break;
+                        case MISSED: boardAsString += " M "; break;
                         default:
                             throw new IllegalStateException("Unexpected value: " + ocean[i][j].getStatus());
                     }
@@ -122,3 +118,5 @@ public class Board implements IBoard {
         return true;
     }
 }
+
+   

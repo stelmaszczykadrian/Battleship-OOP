@@ -8,8 +8,6 @@ public class Square {
         EMPTY, SHIP, HIT, MISSED
     }
 
-
-
     SquareStatus status;
     private int x;
     private int y;
