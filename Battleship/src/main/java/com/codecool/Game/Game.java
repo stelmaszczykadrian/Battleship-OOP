@@ -25,7 +25,7 @@ public class Game {
             if (menuDecision == 0) {
                 display.printBoard(board);
                 display.printBoard(boardPlayer);
-                coordinates.getCoordinates();
+                System.out.println(coordinates.getCoordinates());
                 break;
             } else if (menuDecision == 3) {
                 display.goodbye();
