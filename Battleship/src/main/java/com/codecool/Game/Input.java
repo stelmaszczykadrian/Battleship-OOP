@@ -9,18 +9,18 @@ public class Input {
         Scanner scan = new Scanner(System.in);
         return scan.nextLine();
     }
-    public int giveIntInput(){
+    public int giveIntInput(int inputSize){
       Scanner scan = new Scanner(System.in);
       int input;
       //Input validation
         do {
-            display.WrongIntMessage();
+            display.WrongIntMessage(inputSize);
             while (!scan.hasNextInt()) {
                 display.ThatsNotIntMessage();
                 scan.next();
             }
             input = scan.nextInt();
-        } while (input < 1 || input > 10);
+        } while (input < 1 || input > inputSize);
         return input;
     }
 
