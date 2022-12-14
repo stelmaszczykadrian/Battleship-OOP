@@ -14,6 +14,7 @@ public class Game {
         display.welcomeShip();
         display.rulesOfGame();
         display.mainMenu();
+        display.printBoard(boardPlayer);
         manageMenu();
 
 
