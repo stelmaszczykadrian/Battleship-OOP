@@ -27,6 +27,7 @@ public class Game {
             int menuDecision = input.giveIntInput(4);
             if (menuDecision == 0) {
                 display.printBoard(board);
+                display.printSeparator();
                 display.printBoard(boardPlayer);
                 int y = coordinates.getYCoordinates();
                 int x = coordinates.getXCoordinates();
