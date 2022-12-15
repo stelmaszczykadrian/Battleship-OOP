@@ -58,7 +58,7 @@ public class Game {
                 break;
             } else if (menuDecision == 3) {
                 display.goodbye();
-                break;
+                System.exit(1);
             } else {
                 display.clearTerminal();
                 display.notImplemented();
