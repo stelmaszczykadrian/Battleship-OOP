@@ -8,8 +8,8 @@ public class Player {
 
 
 
-    public void displayTurn(boolean currentPlayer) {
-        if (currentPlayer){
+    public void displayTurn(int currentPlayer) {
+        if (currentPlayer == 1){
             System.out.println("Player 1 turn!");
         }
         else {

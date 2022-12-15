@@ -4,16 +4,16 @@ import com.codecool.Board.BoardFactory;
 import com.codecool.Display;
 import com.codecool.Player.Player;
 
-import java.util.Arrays;
-
 public class Game {
     private final Input input = new Input();
-    private final Board board = new Board();
+    private final Board player1ShootingBoard = new Board();
+    private final Board player2ShootingBoard = new Board();
+    Board player1ShipBoard = BoardFactory.randomPlacement();
+    Board player2ShipBoard = BoardFactory.randomPlacement();
     private final Display display = new Display();
     private final Coordinates coordinates = new Coordinates();
     private final Player player = new Player();
-    boolean currentPlayer = true;
-    Board boardPlayer = BoardFactory.randomPlacement();
+
 
     public void startGame(){
         display.welcomeMessage();
@@ -21,27 +21,33 @@ public class Game {
         display.rulesOfGame();
         display.mainMenu();
         manageMenu();
-        while (!checkForWinner()) {
-            playRound(board, currentPlayer);
-            currentPlayer = !currentPlayer;
+        while (!winCondition()) {
+            playRound();
         }
 
 
     }
 
-    public void playRound(Board board, boolean currentPlayer){
-        display.printBoard(board);
+    private void playRound(){
+        final int player1 = 1;
+        final int player2 = 2;
+        shootingPhase(player1, player1ShootingBoard, player1ShipBoard, player2ShipBoard);
+        shootingPhase(player2, player2ShootingBoard, player2ShipBoard, player1ShipBoard);
+    }
+
+    private void shootingPhase(int currentPlayer, Board shootingBoard, Board shipBoard, Board enemyShipboard) {
+        display.printBoard(shootingBoard);
         display.printSeparator();
-        display.printBoard(boardPlayer);
+        display.printBoard(shipBoard);
         display.printSeparator();
         player.displayTurn(currentPlayer);
         display.printSeparator();
         int y = coordinates.getYCoordinates();
         int x = coordinates.getXCoordinates();
-
-        boolean isShootSuccessful = boardPlayer.isShootSuccessful(y,x);
-        boardPlayer.placeShot(x , y, isShootSuccessful);
-        System.out.println(board);
+        boolean isShootSuccessful = enemyShipboard.isShootSuccessful(y,x);
+        shootingBoard.placeShot(x , y, isShootSuccessful);
+        enemyShipboard.placeShot(x , y, isShootSuccessful);
+        display.clearTerminal();
     }
 
 
@@ -61,7 +67,7 @@ public class Game {
         }
     }
 
-    public boolean checkForWinner() {
+    public boolean winCondition() {
         return false;
     }
 }
