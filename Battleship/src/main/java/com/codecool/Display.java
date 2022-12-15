@@ -76,14 +76,17 @@ public class Display {
         System.out.println("Please enter a letter between a-j");
     }
     public void enemyBoardMessage() {
-        System.out.println("Enemy board:");
+        String ANSI_RED = "\u001B[31m";
+        System.out.println("Enemy board:" + ANSI_RED);
     }
 
     public void playerBoardMessage() {
-        System.out.println("Your board:");
+        String ANSI_RED = "\u001B[31m";
+        System.out.println("Your board:" + ANSI_RED);
     }
     public void printSeparator() {
-        System.out.println("==============================");
+        String ANSI_RED = "\u001B[31m";
+        System.out.println("==============================" + ANSI_RED);
     }
     public void shotSuccessful() {
         System.out.println("HIT!");
