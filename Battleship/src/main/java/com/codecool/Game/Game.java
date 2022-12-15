@@ -33,7 +33,10 @@ public class Game {
                 int x = coordinates.getXCoordinates();
 
                 boolean isShootSuccessful = boardPlayer.isShootSuccessful(y,x);
+                boardPlayer.placeShot(x , y, isShootSuccessful);
                 System.out.println(isShootSuccessful);
+                display.printBoard(boardPlayer);
+
 
                 break;
             } else if (menuDecision == 3) {
