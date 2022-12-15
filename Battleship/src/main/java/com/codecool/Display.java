@@ -79,4 +79,8 @@ public class Display {
     public void giveYinputMessage() {
         System.out.println("Please enter a letter between a-j");
     }
+
+    public void printSeparator() {
+        System.out.println("==============================");
+    }
 }
