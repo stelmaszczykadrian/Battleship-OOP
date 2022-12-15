@@ -1,10 +1,10 @@
 package com.codecool.Board;
 
+import com.codecool.Display;
 import com.codecool.Exceptions.PlaceExceptions;
 import com.codecool.Ship.Ship;
 import com.codecool.Ship.Square;
 
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -62,7 +62,16 @@ public class Board implements IBoard {
         }
         return new Ship(shipArea);
     }
-
+    public void placeShot (int x, int y, boolean isShootSuccessful){
+        Display display = new Display();
+        if (isShootSuccessful){
+            display.shotSuccessful();
+            ocean[y][x].setStatus(Square.SquareStatus.HIT);
+        }else{
+            display.shotUnsuccessful();
+            ocean[y][x].setStatus(Square.SquareStatus.MISSED);
+        }
+    }
     @Override
     public Ship PlaceShip( Ship.ShipType shipType) throws PlaceExceptions {
         Direction dir = (Math.round(Math.random()*10)>5)?Direction.HORIZONTAL:Direction.VERTICAL;
