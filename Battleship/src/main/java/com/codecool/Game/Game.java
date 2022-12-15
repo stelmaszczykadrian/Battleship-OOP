@@ -4,6 +4,8 @@ import com.codecool.Board.Board;
 import com.codecool.Board.BoardFactory;
 import com.codecool.Display;
 
+import java.io.IOException;
+
 public class Game {
 
     private final Board board = new Board();
@@ -18,5 +20,7 @@ public class Game {
         display.printBoard(board);
         display.printBoard(boardPlayer);
 
+
     }
+
 }

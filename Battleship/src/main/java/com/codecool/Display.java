@@ -49,7 +49,6 @@ public class Display {
                         "\t1. Player vs Player game.\n" +
                         "\t2. Player vs Computer.\n" +
                         "\t3. Highscores.\n" +
-                        "\t4. Quit.\n"
-        );
+                        "\t4. Quit.\n");
     }
 }

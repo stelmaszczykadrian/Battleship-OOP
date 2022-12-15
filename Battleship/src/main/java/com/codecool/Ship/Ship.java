@@ -31,7 +31,7 @@ public class Ship {
             this.size = size;
         }
     }
-
+    
     @Override
     public String toString() {
         return "Ship{" +
