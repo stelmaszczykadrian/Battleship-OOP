@@ -18,9 +18,15 @@ public class Game {
         display.rulesOfGame();
         display.mainMenu();
         manageMenu();
-        while (player1.isAlive(player1.getFieldsWithShip()) && player2.isAlive(player2.getFieldsWithShip())) {
+        while (player1.isAlive(player2.getEnemyFieldsWithShip()) && player2.isAlive(player1.getEnemyFieldsWithShip())) {
             playRound();
         }
+        if (!player1.isAlive(player2.getEnemyFieldsWithShip())) {
+            display.winMessage(player2.getPlayerNumber());
+        } else if (!player2.isAlive(player1.getEnemyFieldsWithShip())) {
+            display.winMessage(player1.getPlayerNumber());
+        }
+
     }
 
     private void playRound(){
@@ -44,8 +50,8 @@ public class Game {
         int x = coordinates.getXCoordinates();
         boolean isShootSuccessful = enemyShipboard.isShootSuccessful(y,x);
         if (isShootSuccessful) {
-            currentPlayer.setFieldsWithShip(currentPlayer.getFieldsWithShip() - 1);
-            System.out.println("counter: " + currentPlayer.getFieldsWithShip() + " " + currentPlayer.getPlayerNumber());
+            currentPlayer.setEnemyFieldsWithShip(currentPlayer.getEnemyFieldsWithShip() - 1);
+            System.out.println("counter: " + currentPlayer.getEnemyFieldsWithShip() + " " + currentPlayer.getPlayerNumber());
         }
         shootingBoard.placeShot(x , y, isShootSuccessful);
         enemyShipboard.placeShot(x , y, isShootSuccessful);
