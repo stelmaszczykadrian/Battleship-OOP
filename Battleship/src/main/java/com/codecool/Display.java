@@ -49,8 +49,7 @@ public class Display {
                         "\t1. Player vs Player game.\n" +
                         "\t2. Player vs Computer.\n" +
                         "\t3. Highscores.\n" +
-                        "\t4. Quit.\n"
-        );
+                        "\t4. Quit.\n");
     }
     public void WrongIntMessage(int inputSize){
         System.out.println("Please enter a number between 1-" + inputSize + "!");
@@ -89,5 +88,14 @@ public class Display {
     }
     public void shotUnsuccessful() {
         System.out.println("MISS!");
+    }
+
+    public void displayTurn(int currentPlayer) {
+        if (currentPlayer == 1){
+            System.out.println("Player 1 turn!");
+        }
+        else {
+            System.out.println("Player 2 turn!");
+        }
     }
 }

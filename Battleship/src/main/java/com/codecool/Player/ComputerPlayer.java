@@ -1,4 +1,9 @@
 package com.codecool.Player;
 
-public class ComputerPlayer {
+import com.codecool.Board.Board;
+import com.codecool.Board.BoardFactory;
+
+public class ComputerPlayer extends Player {
+
+
 }
