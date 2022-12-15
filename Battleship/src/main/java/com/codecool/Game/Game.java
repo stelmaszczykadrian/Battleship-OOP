@@ -6,11 +6,6 @@ import com.codecool.Player.Player;
 
 public class Game {
     private final Input input = new Input();
-//    private final Board player1ShootingBoard = new Board();
-//    private final Board player2ShootingBoard = new Board();
-//    Board player1ShipBoard = BoardFactory.randomPlacement();
-//    Board player2ShipBoard = BoardFactory.randomPlacement();
-
     private final Display display = new Display();
     private final Coordinates coordinates = new Coordinates();
     private final Player player1 = new Player();
@@ -28,7 +23,7 @@ public class Game {
         display.rulesOfGame();
         display.mainMenu();
         manageMenu();
-        while (!winCondition()) {
+        while (player1.isAlive(player1.getFieldsWithShip()) && player2.isAlive(player2.getFieldsWithShip())) {
             playRound();
         }
 
@@ -50,6 +45,10 @@ public class Game {
         int y = coordinates.getYCoordinates();
         int x = coordinates.getXCoordinates();
         boolean isShootSuccessful = enemyShipboard.isShootSuccessful(y,x);
+        if (isShootSuccessful) {
+            currentPlayer.setFieldsWithShip(currentPlayer.getFieldsWithShip() - 1);
+            System.out.println("counter: " + currentPlayer.getFieldsWithShip() + " " + currentPlayer.getPlayerNumber());
+        }
         shootingBoard.placeShot(x , y, isShootSuccessful);
         enemyShipboard.placeShot(x , y, isShootSuccessful);
         display.clearTerminal();
@@ -72,7 +71,4 @@ public class Game {
         }
     }
 
-    public boolean winCondition() {
-        return false;
-    }
 }

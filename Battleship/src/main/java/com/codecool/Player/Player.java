@@ -21,4 +21,12 @@ public class Player {
     public void setPlayerNumber(int playerNumber) {
         this.playerNumber = playerNumber;
     }
+
+    public int getFieldsWithShip() {
+        return fieldsWithShip;
+    }
+
+    public void setFieldsWithShip(int fieldsWithShip) {
+        this.fieldsWithShip = fieldsWithShip;
+    }
 }
