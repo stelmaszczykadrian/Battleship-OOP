@@ -1,24 +1,14 @@
 package com.codecool.Game;
 import com.codecool.Board.Board;
-import com.codecool.Board.BoardFactory;
 import com.codecool.Display;
 import com.codecool.Player.Player;
 
 public class Game {
     private final Input input = new Input();
-//    private final Board player1ShootingBoard = new Board();
-//    private final Board player2ShootingBoard = new Board();
-//    Board player1ShipBoard = BoardFactory.randomPlacement();
-//    Board player2ShipBoard = BoardFactory.randomPlacement();
-
     private final Display display = new Display();
     private final Coordinates coordinates = new Coordinates();
     private final Player player1 = new Player();
     private final Player player2 = new Player();
-
-
-
-
 
     public void startGame(){
         player1.setPlayerNumber(1);
@@ -31,8 +21,6 @@ public class Game {
         while (!winCondition()) {
             playRound();
         }
-
-
     }
 
     private void playRound(){
@@ -41,7 +29,12 @@ public class Game {
     }
 
     private void shootingPhase(Player currentPlayer, Board shootingBoard, Board shipBoard, Board enemyShipboard) {
+        display.printSeparator();
+        display.enemyBoardMessage();
+        display.printSeparator();
         display.printBoard(shootingBoard);
+        display.printSeparator();
+        display.playerBoardMessage();
         display.printSeparator();
         display.printBoard(shipBoard);
         display.printSeparator();
@@ -54,7 +47,6 @@ public class Game {
         enemyShipboard.placeShot(x , y, isShootSuccessful);
         display.clearTerminal();
     }
-
 
     public void manageMenu(){
         while(true) {
@@ -71,7 +63,6 @@ public class Game {
             }
         }
     }
-
     public boolean winCondition() {
         return false;
     }

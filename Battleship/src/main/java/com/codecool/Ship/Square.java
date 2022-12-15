@@ -1,13 +1,9 @@
 package com.codecool.Ship;
 
-
-
 public class Square {
-
     public enum SquareStatus {
         EMPTY, SHIP, HIT, MISSED
     }
-
     SquareStatus status;
     private int x;
     private int y;
