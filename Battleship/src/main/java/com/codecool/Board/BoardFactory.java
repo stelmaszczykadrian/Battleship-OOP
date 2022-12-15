@@ -3,22 +3,25 @@ package com.codecool.Board;
 import com.codecool.Exceptions.PlaceExceptions;
 import com.codecool.Ship.Ship;
 
+
 public class BoardFactory {
     public static Board randomPlacement() {
         Board board = new Board();
 
-        for (int i=0;i<4;i++) {
+
+        for (Ship.ShipType type : Ship.ShipType.getAllShipTypes()) {
             Ship ship = null;
             do {
                 try {
-                    ship = board.PlaceShip(Ship.ShipType.BATTLESHIP);
+                        ship = board.PlaceShip(type);
+//                        System.out.println("STWORZYLEM SHIPAAAAAAAA" + ship);
+
                 } catch (PlaceExceptions x) {
-                    System.out.println("E:"+x);
+                    System.out.println("E:" + x);
                 }
-            } while (ship==null );
+
+            } while (ship == null);
         }
-
-
         return board;
     }
 
