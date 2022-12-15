@@ -1,9 +1,7 @@
 package com.codecool;
 
 import com.codecool.Board.Board;
-
 public class Display {
-
     Board board = new Board();
     public void printBoard(Board board) {
         System.out.println(board);
@@ -42,7 +40,6 @@ public class Display {
                         "\t   of the opposing player's game board; [*] hit and [m] miss\n" +
                         "\t7. First player to guess the location of all ships wins\n");
     }
-
     public void mainMenu() {
         System.out.print(
                 "Main menu: \n" +
@@ -78,18 +75,22 @@ public class Display {
     public void giveYinputMessage() {
         System.out.println("Please enter a letter between a-j");
     }
+    public void enemyBoardMessage() {
+        System.out.println("Enemy board:");
+    }
 
+    public void playerBoardMessage() {
+        System.out.println("Your board:");
+    }
     public void printSeparator() {
         System.out.println("==============================");
     }
-
     public void shotSuccessful() {
         System.out.println("HIT!");
     }
     public void shotUnsuccessful() {
         System.out.println("MISS!");
     }
-
     public void displayTurn(int currentPlayer) {
         if (currentPlayer == 1){
             System.out.println("Player 1 turn!");
