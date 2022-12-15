@@ -89,4 +89,13 @@ public class Display {
     public void shotUnsuccessful() {
         System.out.println("MISS!");
     }
+
+    public void displayTurn(int currentPlayer) {
+        if (currentPlayer == 1){
+            System.out.println("Player 1 turn!");
+        }
+        else {
+            System.out.println("Player 2 turn!");
+        }
+    }
 }

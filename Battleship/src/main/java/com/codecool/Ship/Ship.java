@@ -35,6 +35,18 @@ public class Ship {
         ShipType(int size) {
             this.size = size;
         }
+
+        public static List<ShipType> getAllShipTypes(){
+            List<ShipType> types = new ArrayList<>();
+            types.add(ShipType.DESTROYER);
+            types.add(ShipType.SUBMARINE);
+            types.add(ShipType.BATTLESHIP);
+            types.add(ShipType.CRUISER);
+            types.add(ShipType.CARRIER);
+
+            return types;
+        }
+
     }
 
     @Override
