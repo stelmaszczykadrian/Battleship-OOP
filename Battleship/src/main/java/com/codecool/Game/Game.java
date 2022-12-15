@@ -6,16 +6,23 @@ import com.codecool.Player.Player;
 
 public class Game {
     private final Input input = new Input();
-    private final Board player1ShootingBoard = new Board();
-    private final Board player2ShootingBoard = new Board();
-    Board player1ShipBoard = BoardFactory.randomPlacement();
-    Board player2ShipBoard = BoardFactory.randomPlacement();
+//    private final Board player1ShootingBoard = new Board();
+//    private final Board player2ShootingBoard = new Board();
+//    Board player1ShipBoard = BoardFactory.randomPlacement();
+//    Board player2ShipBoard = BoardFactory.randomPlacement();
+
     private final Display display = new Display();
     private final Coordinates coordinates = new Coordinates();
-    private final Player player = new Player();
+    private final Player player1 = new Player();
+    private final Player player2 = new Player();
+
+
+
 
 
     public void startGame(){
+        player1.setPlayerNumber(1);
+        player2.setPlayerNumber(2);
         display.welcomeMessage();
         display.welcomeShip();
         display.rulesOfGame();
@@ -29,18 +36,16 @@ public class Game {
     }
 
     private void playRound(){
-        final int player1 = 1;
-        final int player2 = 2;
-        shootingPhase(player1, player1ShootingBoard, player1ShipBoard, player2ShipBoard);
-        shootingPhase(player2, player2ShootingBoard, player2ShipBoard, player1ShipBoard);
+        shootingPhase(player1, player1.shootingBoard, player1.shipBoard, player2.shipBoard);
+        shootingPhase(player2, player2.shootingBoard, player2.shipBoard, player1.shipBoard);
     }
 
-    private void shootingPhase(int currentPlayer, Board shootingBoard, Board shipBoard, Board enemyShipboard) {
+    private void shootingPhase(Player currentPlayer, Board shootingBoard, Board shipBoard, Board enemyShipboard) {
         display.printBoard(shootingBoard);
         display.printSeparator();
         display.printBoard(shipBoard);
         display.printSeparator();
-        player.displayTurn(currentPlayer);
+        display.displayTurn(currentPlayer.getPlayerNumber());
         display.printSeparator();
         int y = coordinates.getYCoordinates();
         int x = coordinates.getXCoordinates();
