@@ -1,9 +1,7 @@
 package com.codecool.Game;
 
 import com.codecool.Display;
-
 import java.util.Scanner;
-
 public class Input {
     private final Display display = new Display();
 

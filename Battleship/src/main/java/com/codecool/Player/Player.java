@@ -4,7 +4,6 @@ import com.codecool.Board.Board;
 import com.codecool.Board.BoardFactory;
 
 public class Player {
-
     int fieldsWithShip = 15;
     private int playerNumber;
     public final Board shipBoard = BoardFactory.randomPlacement();
