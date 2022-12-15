@@ -14,7 +14,6 @@ public class BoardFactory {
             do {
                 try {
                         ship = board.PlaceShip(type);
-//                        System.out.println("STWORZYLEM SHIPAAAAAAAA" + ship);
 
                 } catch (PlaceExceptions x) {
                     System.out.println("E:" + x);
