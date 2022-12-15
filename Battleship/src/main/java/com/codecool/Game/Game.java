@@ -29,7 +29,6 @@ public class Game {
     }
 
     private void shootingPhase(Player currentPlayer, Board shootingBoard, Board shipBoard, Board enemyShipboard) {
-        display.printSeparator();
         display.enemyBoardMessage();
         display.printSeparator();
         display.printBoard(shootingBoard);
