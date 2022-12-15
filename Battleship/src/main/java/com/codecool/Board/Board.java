@@ -4,13 +4,12 @@ import com.codecool.Exceptions.PlaceExceptions;
 import com.codecool.Ship.Ship;
 import com.codecool.Ship.Square;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class Board implements IBoard {
-
-
-    public enum Direction { HORIZONTAL, VERTICAL }
+    public enum Direction {HORIZONTAL, VERTICAL}
     private final int boardSize = 10;
     private Square[][] ocean;
 
@@ -23,6 +22,10 @@ public class Board implements IBoard {
         }
     }
 
+    public int getBoardSize(){
+        return boardSize;
+    }
+
     /***
      * Strzał w inny statek
      * @param x
@@ -30,8 +33,8 @@ public class Board implements IBoard {
      * @return zwraca true gdy strzał udany
      */
     @Override
-    public boolean Shoot(Integer x, Integer y) {
-        return ocean[x][y].getStatus().equals(Square.SquareStatus.SHIP);
+    public boolean isShootSuccessful(Integer y, Integer x) {
+        return ocean[y][x].getStatus().equals(Square.SquareStatus.SHIP);
     }
 
     @Override
