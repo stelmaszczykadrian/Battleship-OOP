@@ -83,4 +83,11 @@ public class Display {
     public void printSeparator() {
         System.out.println("==============================");
     }
+
+    public void shotSuccessful() {
+        System.out.println("HIT!");
+    }
+    public void shotUnsuccessful() {
+        System.out.println("MISS!");
+    }
 }

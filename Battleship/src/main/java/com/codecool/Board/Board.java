@@ -1,5 +1,6 @@
 package com.codecool.Board;
 
+import com.codecool.Display;
 import com.codecool.Exceptions.PlaceExceptions;
 import com.codecool.Ship.Ship;
 import com.codecool.Ship.Square;
@@ -62,8 +63,13 @@ public class Board implements IBoard {
         return new Ship(shipArea);
     }
     public void placeShot (int x, int y, boolean isShootSuccessful){
+        Display display = new Display();
         if (isShootSuccessful){
+            display.shotSuccessful();
             ocean[y][x].setStatus(Square.SquareStatus.HIT);
+        }else{
+            display.shotUnsuccessful();
+            ocean[y][x].setStatus(Square.SquareStatus.MISSED);
         }
     }
     @Override
