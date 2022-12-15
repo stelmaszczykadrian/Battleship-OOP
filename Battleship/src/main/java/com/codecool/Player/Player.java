@@ -4,7 +4,7 @@ import com.codecool.Board.Board;
 import com.codecool.Board.BoardFactory;
 
 public class Player {
-    int fieldsWithShip = 15;
+    int enemyFieldsWithShip = 4;
     private int playerNumber;
     public final Board shipBoard = BoardFactory.randomPlacement();
     public final Board shootingBoard = new Board();
@@ -21,11 +21,11 @@ public class Player {
         this.playerNumber = playerNumber;
     }
 
-    public int getFieldsWithShip() {
-        return fieldsWithShip;
+    public int getEnemyFieldsWithShip() {
+        return enemyFieldsWithShip;
     }
 
-    public void setFieldsWithShip(int fieldsWithShip) {
-        this.fieldsWithShip = fieldsWithShip;
+    public void setEnemyFieldsWithShip(int enemyFieldsWithShip) {
+        this.enemyFieldsWithShip = enemyFieldsWithShip;
     }
 }

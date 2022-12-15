@@ -99,4 +99,8 @@ public class Display {
             System.out.println("Player 2 turn!");
         }
     }
+
+    public void winMessage(int playerNumber) {
+        System.out.println("Player "+ playerNumber+ " won!!!");
+    }
 }
