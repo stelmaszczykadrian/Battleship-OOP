@@ -36,9 +36,6 @@ public class Ship {
             this.size = size;
         }
 
-        public static Stream<ShipType> stream() {
-            return Stream.of(ShipType.values());
-        }
         public static List<ShipType> getAllShipTypes(){
             List<ShipType> types = new ArrayList<>();
             types.add(ShipType.DESTROYER);
@@ -51,7 +48,6 @@ public class Ship {
         }
 
     }
-
 
     @Override
     public String toString() {
