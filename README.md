@@ -1,7 +1,7 @@
 ![Battleship](https://github.com/stelmaszczykadrian/Battleship-OOP/assets/106514178/c2f9f0c7-57b9-4e39-a5d6-1ff5098ee909)
 
 <br>
-🚢 Ahoy, captain! Welcome aboard **Battleships**, the ultimate naval combat game. ⚔️💥 You'll need to use all your wits and strategy to outmaneuver and outgun your opponent.
+🚢 Ahoy, captain! Welcome aboard <strong>Battleships</strong>, the ultimate naval combat game. ⚔️💥 You'll need to use all your wits and strategy to outmaneuver and outgun your opponent.
 
 It's a classic battleships game based on the pencil and paper version. 📝
 Each player receives a game board and five ships of varying lengths. Each ship has parts.
